@@ -33,9 +33,7 @@ stream = p.open(format = pyaudio.paInt16,
 spectrogram = CreateImage((WINDOW_WIDTH, HEIGHT), IPL_DEPTH_16U, 1)
 Set(spectrogram, 0)
 
-running = True
-
-while (running):
+while (True):
     data = stream.read(CHUNK_SIZE)
     data = numpy.fromstring(data, 'int16')
     freq = numpy.fft.rfft(data)
@@ -57,7 +55,7 @@ while (running):
     
     ShowImage("Spectograph", spectrogram)
     if (WaitKey(10) == ord('q')):
-      running = False
+      break
       
 stream.stop_stream()
 stream.close()
