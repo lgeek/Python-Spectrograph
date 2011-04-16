@@ -10,6 +10,8 @@ Install [PyAudio](http://people.csail.mit.edu/hubert/pyaudio/), [NumPy](http://n
 
     python ./spectrograph.py
     
+Press q to quit.
+
 You can change some options at the start of the file.
 
 License
